@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo - Kyfe</title>
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  </head>
+
+  <body class="bg-[#eef1f6]">
+    <div class="flex flex-col lg:w-6xl sm:w-lg min-h-screen mx-auto">
+      <!-- Hero Website -->
+      <header
+        class="w-full py-[10px] my-[20px] text-center bg-linear-to-r from-[#395886] to-[#D5DEEF] rounded-lg"
+      >
+        <h1 class="text-2xl py-[10px] font-bold text-white">TO-DO LIST</h1>
+        <p class="text-md text-white">Make your life more organized</p>
+      </header>
+
+      <main>
+        <!-- Todo Input -->
+        <form class="flex gap-[5px] mb-[20px] justify-start">
+          <div class="flex gap-[10px]">
+            <input
+              type="text"
+              id="task-input"
+              class="rounded-lg p-[4px] ps-[15px] lg:w-xs sm:w-[200px] bg-white text-md shadow-md"
+              placeholder="Add a new task"
+            />
+            <input
+              type="date"
+              id="due-date-input"
+              class="rounded-lg p-[4px] ps-[15px] lg:w-3xs sm:w-[200px] bg-white text-md shadow-md"
+              placeholder="Due date"
+            />
+          </div>
+
+          <button
+            type="button"
+            class="bg-[#395886] text-white p-[4px] rounded-md w-[40px] cursor-pointer"
+            onclick="addTask();"
+          >
+            +
+          </button>
+        </form>
+
+        <!-- Todo Action -->
+        <header class="my-[8px]">
+          <h2 class="text-xl font-bold text-[#395886]">Tasks</h2>
+        </header>
+        <section class="flex justify-between mb-[5px] py-[8px]">
+          <div class="flex gap-[8px]">
+            <button
+              class="filter-btn bg-[#F0F3FA] text-[#395886] px-[10px] rounded-2xl border border-[#395886]"
+              onclick="filterTasks('all', this)"
+            >
+              Show All
+            </button>
+            <button
+              onclick="filterTasks('uncompleted', this)"
+              class="filter-btn bg-[#F0F3FA] text-[#395886] px-[10px] rounded-2xl border border-[#395886]"
+            >
+              Show Active
+            </button>
+            <button
+              class="filter-btn bg-[#F0F3FA] text-[#395886] px-[10px] rounded-2xl border border-[#395886]"
+              onclick="filterTasks('completed', this)"
+            >
+              Show Completed
+            </button>
+          </div>
+
+          <button
+            class="bg-red-500 text-white px-[15px] rounded-2xl cursor-pointer"
+            onclick="deleteAllTasks();"
+          >
+            Delete All
+          </button>
+        </section>
+
+        <!-- Todo List -->
+        <section class="justify-items-center mb-[50px]">
+          <!-- Task List -->
+          <div id="task-list" class="text-[#395886]">
+            <p>Task is Empty!</p>
+          </div>
+        </section>
+      </main>
+
+      <footer
+        class="h-[50px] text-xs bg-white text-center mt-auto p-[15px] rounded-t-lg shadow-lg"
+      >
+        <p class="text-[#395886]">© 2025 Kyfe. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <!-- Javascript External -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
