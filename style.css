@@ -1,0 +1,29 @@
+.filter-btn {
+  border: 1px solid #395886;
+  color: #395886;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background-color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background-color: #395886;
+  color: white;
+}
+
+.completion-btn {
+  background-color: #395886;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.completion-btn.active {
+  background-color: white;
+  color: #395886;
+  border: 1px solid #395886;
+}
